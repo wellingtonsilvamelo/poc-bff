@@ -1,0 +1,22 @@
+spring:
+  webflux:
+    base-path: /poc-bff
+  application:
+    name: poc-bff
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+
+# Quando executada em localhost e não dockerizada
+#api:
+#  url:
+#    request: http://localhost:8081/poc-request-api/quotes
+#    sse: http://localhost:8082/poc-response-api/sse/subscribe
+api:
+  url:
+    request: http://request-api:8081/poc-request-api/quotes
+    sse: http://response-api:8082/poc-response-api/sse/subscribe
